@@ -1,0 +1,574 @@
+/* Power Rangers Project- Part 1: Core and Theme */
+
+/* CSS Variables for Ranger color palette */
+:root {
+    --bg-dark: #0b0f19;
+    --panel-bg: #131825;
+    --neon-red: #ff1e38;
+    --neon-blue: #00d2ff;
+    --neon-yellow: #ffe600;
+    --neon-pink: #ff007f;
+    --neon-black: #2a2a2a;
+    --text-light: #f0f4f8;
+    --font-main: 'Orbitron', 'Segoe UI', sans-serif, system-ui;
+}
+
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   HERO HEADER & AUDIO PLAYER STYLING
+   ========================================== */
+
+.hero-header {
+    width: 100%;
+    padding: 3rem 1rem 2rem 1rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(19, 24, 37, 1) 0%, rgba(11, 15, 25, 0.8) 100%);
+    border-bottom: 2px solid var(--neon-blue);
+    box-shadow: 0 4px 25px rgba(0, 210, 255, 0.25);
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px rgba(0, 210, 255, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+}
+
+/* Audio Deck Box */
+.audio-player-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--panel-bg);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.audio-player-container audio {
+    outline: none;
+    filter: drop-shadow(0 0 5px rgba(0, 210, 255, 0.3));
+}
+
+/* Header / Title Styling */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(19, 24, 37, 0.9) 0% rgba(11, 15, 25, 0) 100%);
+    border-bottom: 2px solid var(--neon-blue);
+    box-shadow: 0 4px 20px rgba(0, 210, 255, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+/* Rangers Section Styling */
+.rangers-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rangers-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0 210 255 0.5);
+}
+
+/* Flex Grid Container */
+.rangers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Individual Ranger Card */
+.ranger-card {
+    background-color: var(--panel-bg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 280px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0 0 0 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.ranger-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-blue);
+    box-shadow: 0 8px 25px rgba(0 210 255 0.4);
+}
+
+.ranger-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.ranger-title {
+    font-size: 0.85rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Image Container for Suit & Civilian */
+.card-images {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.card-images img{
+    width: 110px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bio {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #cbd5e1;
+}
+
+/* ==========================================
+   INDIVIDUAL RANGER COLOR HOVER ACCENTS
+   ========================================== */
+
+/* Red Ranger */
+.red-ranger:hover {
+    border-color: var(--neon-red);
+    box-shadow: 0 8px 25px rgba(255, 30, 56, 0.7);
+}
+.red-ranger .ranger-title {
+    color: var(--neon-red);
+}
+
+/* Blue Ranger */
+.blue-ranger:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.7);
+}
+.blue-ranger .ranger-title {
+    color: var(--neon-blue);
+}
+
+/* Black Ranger - Using a clean Silver/White high-contrast glow */
+.black-ranger:hover {
+    border-color: #cbd5e1; /* Sleek metallic silver */
+    box-shadow: 0 8px 25px rgba(203, 213, 225, 0.4); /* Clean bright aura */
+}
+.black-ranger .ranger-title {
+    color: #434e52; /* Subtle metallic gray for text */
+}
+
+/* Yellow Ranger */
+.yellow-ranger:hover {
+    border-color: #ffe600;
+    box-shadow: 0 8px 25px rgba(255, 230, 0, 0.5);
+}
+.yellow-ranger .ranger-title {
+    color: #ffe600;
+}
+
+/* Pink Ranger */
+.pink-ranger:hover {
+    border-color: var(--neon-pink);
+    box-shadow: 0 8px 25px rgba(250, 125, 125, 0.5);
+}
+.pink-ranger .ranger-title {
+    color: var(--neon-pink);
+}
+
+/* Green Ranger */
+.green-ranger:hover {
+    border-color: #00ff66;
+    box-shadow: 0 8px 25px rgba(0, 255, 102, 0.5);
+}
+.green-ranger .ranger-title {
+    color: #00ff66;
+}
+
+/*White Ranger */
+.white-ranger:hover {
+    border-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.7);
+}
+.white-ranger .ranger-title {
+    color: #ffffff;
+}
+
+/* ==========================================
+   SECTION 2: ZORDS & MEGAZORD
+   ========================================== */
+.zords-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid rgba(0, 210, 255, 0.2);
+    margin-top: 2rem;
+}
+
+.zords-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    text-align: center;
+}
+
+/* Zords Grid Container */
+.zords-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Individual Zord Card (reuses .ranger-card sizing and structure) */
+.zord-card {
+    background-color: var(--panel-bg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 280px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zord-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-blue);
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.4);
+}
+
+.zord-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.zord-pilot {
+    font-size: 0.85rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Single image wrapper style for Zord cards */
+.zord-card .card-images {
+    justify-content: center;
+}
+
+.zord-card .card-images img {
+    width: 210px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Megazord Feature Layout */
+.megazord-feature {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.megazord-card {
+    width: 100%;
+    max-width: 600px;
+    border-color: rgba(255, 230, 0, 0.4);
+}
+
+.megazord-card:hover {
+    border-color: var(--neon-yellow);
+    box-shadow: 0 8px 30px rgba(255, 230, 0, 0.7);
+}
+
+/* Subsection Header for Special Zords */
+.subsection-title {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin: 2.5rem 0 1.5rem 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
+}
+
+.auxiliary-grid {
+    justify-content: center;
+}
+
+/* Green Zord Hover State */
+.green-zord:hover {
+    border-color: #00ff66;
+    box-shadow: 0 8px 25px rgba(0, 255, 102, 0.4);
+}
+.green-zord .zord-pilot {
+    color: #00ff66;
+}
+
+/* White Zord Hover State (High-Contrast Silver/White Glow) */
+.white-zord:hover {
+    border-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.5);
+}
+.white-zord .zord-pilot {
+    color: #e2e8f0;
+}
+
+/* ==========================================
+   SECTION 3: ALLIES & CIVILIANS
+   ========================================== */
+.allies-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid rgba(0, 210, 255, 0.2);
+    margin-top: 2rem;
+}
+
+.allies-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    text-align: center;
+}
+
+.allies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+/* Base Ally Card Layout */
+.ally-card {
+    background-color: var(--panel-bg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 280px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.ally-card h3 {
+    font-size: 1.15 rem;
+    margin-bottom: 0.25rem;
+}
+
+.ally-title {
+    font-size: 0.85rem;
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.ally-card .card-images {
+    justify-content: center;
+}
+
+.ally-card .card-images img {
+    width: 210px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Individual Ally Hover Accents */
+
+/* Zordon - Energy Tube Cyan/Blue */
+.zordon-card:hover {
+    transform: translateY(-5px);
+    border-color: #00e5ff;
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
+}
+.zordon-card .ally-title {
+    color: #00e5ff;
+}
+
+/* Alpha 5 Bright - Amber/Red */
+.alpha-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff5500;
+    box-shadow: 0 8px 25px rgba(255, 85, 0, 0.5);
+}
+.alpha-card .ally-title {
+    color: #ff5500;
+}
+
+/* Bulk & Skull - Punchy Orange/Gold */
+.bulk-skull-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffb700;
+    box-shadow: 0 8px 25px rgba(255, 183, 0, 0.5);
+}
+.bulk-skull-card .ally-title {
+    color: #ffb700;
+}
+/* ==========================================
+   SECTION 4: VILLAINS OF ANGEL GROVE
+   ========================================== */
+.villians-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid rgba(255, 30, 56, 0.2);
+    margin-top: 2rem;
+}
+
+.villians-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 30, 56, 0.5);
+    text-align: center;
+}
+
+.villians-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.villian-card {
+    background-color: var(--panel-bg);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    width: 280px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.villian-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+}
+
+.villian-title {
+    font-size: 0.85rem;
+    color: var(--neon-red);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.villian-card .card-images {
+    justify-content: center;
+}
+
+.villian-card .card-images img {
+    width: 210px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Villian Hover States */
+.rita-card:hover {
+    transform: translateY(-5px);
+    border-color: #bd00ff;
+    box-shadow: 0 8px 25px rgba(189, 0, 255, 0.5);
+}
+
+.zedd-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff0033;
+    box-shadow: 0 8px 25px rgba(255, 0, 51, 0.6);
+}
+
+.goldar-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
